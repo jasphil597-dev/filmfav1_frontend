@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import headerLogo from '../assets/header-logo.svg';
+import headerLogo from '../assets/creative.png';
 
 function Nav({ user }) {
 	const authenticatedOptions = (
@@ -25,23 +25,23 @@ function Nav({ user }) {
 	const unauthenticatedOptions = (
 		<>
 			<NavLink className='nav-link' to='/user/sign-in'>
-				Log-In
+				{/* Log-In */}
 			</NavLink>
 			<NavLink className='nav-link' to='/user/sign-up'>
-				SignUp
+				{/* SignUp */}
 			</NavLink>
 		</>
 	);
 
-	// return (
-	// 	<nav>
-	// 		<img src={headerLogo} alt='FilmFav Logo' />
-	// 		{user && <div className='link welcome'>Welcome, {user.username}</div>}
-	// 		<div className='nav-links'>
-	// 			{user ? authenticatedOptions : unauthenticatedOptions}
-	// 		</div>
-	// 	</nav>
-	// );
+	return (
+		<nav>
+			{/* <img src={headerLogo} alt='FilmFav Logo' /> */}
+			{user && <div className='link welcome'>Welcome, {user.username}</div>}
+			<div className='nav-links'>
+				{user ? authenticatedOptions : unauthenticatedOptions}
+			</div>
+		</nav>
+	);
 }
 
 export default Nav;

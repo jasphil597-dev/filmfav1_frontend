@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import { signUp } from '../services/users.js';
+import { signUp } from '../services/users.js';
 // import splash from '../assets/splash.svg';
 
-const SignUp({ setUser }) {
+function Register({ setUser }) {
 	const navigate = useNavigate();
 
 	const [form, setForm] = useState({
@@ -60,7 +60,7 @@ const SignUp({ setUser }) {
 	return (
 		<div className='home-container'>
 			<div>
-				<img src={splash} alt='splash' />
+				<h1>Sign Up</h1>
 			</div>
 			<div>
 				<form className='home-form' onSubmit={handleSubmit}>
@@ -91,4 +91,4 @@ const SignUp({ setUser }) {
 	);
 }
 
-export default SignUp;
+export default Register;

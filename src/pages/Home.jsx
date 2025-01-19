@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { signIn } from '../services/users.js';
-import splash from '../assets/splash.svg';
+import { signIn } from './SignIn.jsx';
+// import splash from '../assets/creative.png';
 
 function Home({ setUser }) {
 	const navigate = useNavigate();
@@ -29,7 +29,7 @@ function Home({ setUser }) {
 			const userData = await signIn(form);
 			setUser(userData);
 
-			navigate('/cats');
+			navigate('/movies');
 		} catch (error) {
 			console.error(error);
 			setForm((prevForm) => ({
@@ -57,9 +57,10 @@ function Home({ setUser }) {
 
 	return (
 		<div className='home-container'>
-			<div>
-				<img src={splash} alt='splash' />
-			</div>
+			{/* <div>
+				<img src='https://via.placeholder.com/300' alt='Creative' />
+			</div> */}
+
 			<div>
 				<form className='home-form' onSubmit={handleSubmit}>
 					<h1>Login</h1>

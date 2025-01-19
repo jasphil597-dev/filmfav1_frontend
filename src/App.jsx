@@ -1,13 +1,22 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { verifyUser } from './services/users.js';
-import Nav from './components/Nav';
-import Home from './pages/Home';
-import SignUp from './pages/SignUp.jsx';
+import BaseLayout from './components/BaseLayout.jsx';
+import Nav from './components/Nav.jsx';
+import Home from './pages/Home.jsx';
+import SignUp from './pages/Register.jsx';
+import SignIn from './pages/SignIn.jsx';
 import SignOut from './pages/SignOut.jsx';
-import { Routes, Route } from 'react-router-dom';
+import MyReviews from './pages/MyReviews.jsx';
+import MyWatchList from './pages/MyWatchList.jsx';
+import MyMovies from './pages/MyMovies.jsx';
+import Movies from './pages/Movies.jsx';
+import MovieDetails from './pages/MovieDetails.jsx';
+import Reviews from './pages/Reviews.jsx';
+import ReviewDetails from './pages/ReviewDetails.jsx';
+import EditReview from './pages/EditReview.jsx';
+import Comments from './pages/Comments.jsx';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-
-export const AuthedUserContext = createContext(null);
 
 function App() {
 	const [user, setUser] = useState(null);
@@ -25,39 +34,42 @@ function App() {
 		<>
 			<Nav user={user} />
 			<Routes>
-				{/* User Routes */}
-				<Route path='/user/sign-up' element={<SignUp setUser={setUser} />} />
-				<Route path='/user/sign-in' element={<SignIn setUser={setUser} />} />
-				<Route path='/user/sign-out' element={<SignOut setUser={setUser} />} />
+				{/* Routes within BaseLayout */}
+				<Route element={<BaseLayout />}>
+					<Route path='/' element={<Home setUser={setUser} />} />
+					<Route path='/movies' element={<Movies user={user} />} />
+					<Route path='/movies/:movieId' element={<MovieDetails />} />
+					<Route path='/movies/:movieId/reviews' element={<Reviews />} />
+					<Route
+						path='/movies/:movieId/reviews/:reviewId'
+						element={<ReviewDetails />}
+					/>
+					<Route
+						path='/movies/:movieId/reviews/:reviewId/edit'
+						element={<EditReview />}
+					/>
+					<Route
+						path='/movies/:movieId/reviews/:reviewId/comments'
+						element={<Comments />}
+					/>
+					<Route
+						path='/movies/:movieId/reviews/:reviewId/comments/:commentId'
+						element={<Comments />}
+					/>
+				</Route>
+
+				{/* Public */}
+				<Route path='/register' element={<SignUp setUser={setUser} />} />
+				<Route path='/sign-in' element={<SignIn setUser={setUser} />} />
+				<Route path='/sign-out' element={<SignOut setUser={setUser} />} />
 				<Route path='/user/myreviews' element={<MyReviews />} />
 				<Route path='/user/mywatchlist' element={<MyWatchList />} />
 				<Route path='/user/mywatchlist/:movieId' element={<MyWatchList />} />
 				<Route path='/user/mymovies' element={<MyMovies />} />
 				<Route path='/user/mymovies/:movieId' element={<MyMovies />} />
-				{/* Movies */}
-				<Route path='/movies' element={<Movies />} />
-				<Route path='/movies/:movieId' element={<MovieDetails />} />
-				{/* MyReviews */}
-				<Route path='/movies/:movieId/reviews' element={<Reviews />} />
-				<Route
-					path='/movies/:movieId/reviews/:reviewId'
-					element={<ReviewDetail />}
-				/>
-				<Route
-					path='/movies/:movieId/reviews/:reviewId/edit'
-					element={<EditReview />}
-				/>
-				{/* Comments */}
-				<Route
-					path='/movies/:movieId/reviews/:reviewId/comments'
-					element={<Comments />}
-				/>
-				<Route
-					path='/movies/:movieId/reviews/:reviewId/comments/:commentId'
-					element={<Comments />}
-				/>
 			</Routes>
 		</>
 	);
 }
+
 export default App;
