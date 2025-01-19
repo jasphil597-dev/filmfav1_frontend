@@ -25,9 +25,37 @@ function App() {
 		<>
 			<Nav user={user} />
 			<Routes>
-				<Route path='/' element={<Home setUser={setUser} />} />
-				<Route path='/signUp' element={<SignUp setUser={setUser} />} />
-				<Route path='/sign-out' element={<SignOut setUser={setUser} />} />
+				{/* User Routes */}
+				<Route path='/user/sign-up' element={<SignUp setUser={setUser} />} />
+				<Route path='/user/sign-in' element={<SignIn setUser={setUser} />} />
+				<Route path='/user/sign-out' element={<SignOut setUser={setUser} />} />
+				<Route path='/user/myreviews' element={<MyReviews />} />
+				<Route path='/user/mywatchlist' element={<MyWatchList />} />
+				<Route path='/user/mywatchlist/:movieId' element={<MyWatchList />} />
+				<Route path='/user/mymovies' element={<MyMovies />} />
+				<Route path='/user/mymovies/:movieId' element={<MyMovies />} />
+				{/* Movies */}
+				<Route path='/movies' element={<Movies />} />
+				<Route path='/movies/:movieId' element={<MovieDetails />} />
+				{/* MyReviews */}
+				<Route path='/movies/:movieId/reviews' element={<Reviews />} />
+				<Route
+					path='/movies/:movieId/reviews/:reviewId'
+					element={<ReviewDetail />}
+				/>
+				<Route
+					path='/movies/:movieId/reviews/:reviewId/edit'
+					element={<EditReview />}
+				/>
+				{/* Comments */}
+				<Route
+					path='/movies/:movieId/reviews/:reviewId/comments'
+					element={<Comments />}
+				/>
+				<Route
+					path='/movies/:movieId/reviews/:reviewId/comments/:commentId'
+					element={<Comments />}
+				/>
 			</Routes>
 		</>
 	);
