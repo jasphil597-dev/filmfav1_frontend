@@ -1,5 +1,14 @@
-function ReviewDetails() {
-	return <div>Review Details Component</div>;
-}
+import React, { useState } from 'react';
+import { ReviewCard, ReviewForm } from '../../components/MyReview';
+import '../../components/MyReview/Review.css';
 
-export default ReviewDetails;
+const ReviewDetailsPage = () => {
+	return (
+		<div>
+			<ReviewCard />
+			<ReviewForm />
+		</div>
+	);
+};
+
+export default ReviewDetailsPage;

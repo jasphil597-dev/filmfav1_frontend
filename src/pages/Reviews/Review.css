@@ -1,0 +1,19 @@
+.reviews {
+	font-family: Arial, sans-serif;
+	padding: 20px;
+}
+
+.reviews h1 {
+	color: #333;
+}
+
+.reviews ul {
+	list-style: none;
+	padding: 0;
+}
+
+.reviews li {
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+}

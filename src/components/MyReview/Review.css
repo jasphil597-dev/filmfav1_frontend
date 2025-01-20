@@ -1,0 +1,34 @@
+.review-card {
+	border: 1px solid #ddd;
+	padding: 10px;
+	margin-bottom: 10px;
+	border-radius: 5px;
+	background-color: #fff;
+}
+
+.review-form {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.review-form input,
+.review-form textarea {
+	width: 100%;
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+.review-form button {
+	padding: 10px;
+	background-color: #007bff;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.review-form button:hover {
+	background-color: #0056b3;
+}
