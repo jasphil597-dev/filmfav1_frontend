@@ -4,19 +4,18 @@ import './Header.css';
 const Header = () => {
 	return (
 		<header>
-			<h1>Welcome to FilmFav</h1>
+			<div className='logo'>
+				<img src='/src/assets/Film Favorite (1).png' alt='Logo' height='200' />
+			</div>
+			<div className='search-bar'>
+				<input type='text' placeholder='Search...' />
+			</div>
 			<nav>
-				<ul>
-					<li>
-						<a href='/'>Home</a>
-					</li>
-					<li>
-						<a href='/about'>About</a>
-					</li>
-					<li>
-						<a href='/contact'>Contact</a>
-					</li>
-				</ul>
+				<a href='#'>Movies</a>
+				<a href='#'>My Movies</a>
+				<a href='#'>Watch List</a>
+				<a href='#'>Fav Movies</a>
+				<a href='#'>Log Out</a>
 			</nav>
 		</header>
 	);
