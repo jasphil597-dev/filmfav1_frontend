@@ -2,24 +2,22 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 10px 20px;
-	background-color: #282c34; /* Adjust to your theme */
+	padding: 10px 540px 10px 0;
+	background-color: #282c34;
 	color: white;
 }
 
-/* Left Section: Logo */
 .navbar-left .logo {
-	height: 40px; /* Adjust logo size */
+	height: 40px;
 }
 
-/* Center Section: Search Bar */
 .navbar-center {
-	flex: 1; /* Center section takes available space */
-	text-align: center;
+	flex: 1;
+	text-align: left;
 }
 
 .search-bar {
-	width: 70%; /* Adjust width as needed */
+	width: 70%;
 	max-width: 400px;
 	padding: 5px 10px;
 	border-radius: 5px;
@@ -27,16 +25,15 @@
 	font-size: 16px;
 }
 
-/* Right Section: Navigation Links */
 .navbar-right {
 	display: flex;
 	align-items: center;
-	gap: 15px; /* Spacing between elements */
+	gap: 15px;
 }
 
 .nav-links {
 	display: flex;
-	gap: 10px; /* Spacing between links */
+	gap: 10px;
 }
 
 .nav-link {
@@ -48,11 +45,11 @@
 }
 
 .nav-link:hover {
-	background-color: #444; /* Hover effect */
+	background-color: #444;
 }
 
-.welcome {
+/* .welcome {
 	margin-right: 10px;
 	color: #ccc;
 	font-size: 14px;
-}
+} */
