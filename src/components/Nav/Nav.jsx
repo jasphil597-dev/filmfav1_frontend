@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import headerLogo from '../assets/creative.png';
+// import headerLogo from '../assets/creative.png';
 
 function Nav({ user }) {
 	const authenticatedOptions = (

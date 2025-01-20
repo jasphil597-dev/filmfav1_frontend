@@ -1,13 +1,14 @@
-import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { signIn } from './SignIn.jsx';
-// import splash from '../assets/creative.png';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { signUp } from '../../services/users.js';
+// import splash from '../assets/splash.svg';
 
-function Home({ setUser }) {
+function Register({ setUser }) {
 	const navigate = useNavigate();
 
 	const [form, setForm] = useState({
 		username: '',
+		email: '',
 		password: '',
 		isError: false,
 		errorMsg: '',
@@ -26,7 +27,7 @@ function Home({ setUser }) {
 		event.preventDefault();
 
 		try {
-			const userData = await signIn(form);
+			const userData = await signUp(form);
 			setUser(userData);
 
 			navigate('/movies');
@@ -36,6 +37,7 @@ function Home({ setUser }) {
 				isError: true,
 				errorMsg: 'Invalid Credentials',
 				username: prevForm.username,
+				email: '',
 				password: '',
 			}));
 		}
@@ -51,19 +53,18 @@ function Home({ setUser }) {
 				</button>
 			);
 		} else {
-			return <button type='submit'>Log In</button>;
+			return <button type='submit'>Register</button>;
 		}
 	};
 
 	return (
 		<div className='home-container'>
-			{/* <div>
-				<img src='https://via.placeholder.com/300' alt='Creative' />
-			</div> */}
-
+			<div>
+				<h1>Sign Up</h1>
+			</div>
 			<div>
 				<form className='home-form' onSubmit={handleSubmit}>
-					<h1>Login</h1>
+					<h1>Register</h1>
 					<input
 						type='text'
 						name='username'
@@ -84,14 +85,10 @@ function Home({ setUser }) {
 					/>
 
 					{renderError()}
-
-					<Link to='/register'>
-						<p>No account? Sign up here!</p>
-					</Link>
 				</form>
 			</div>
 		</div>
 	);
 }
 
-export default Home;
+export default Register;

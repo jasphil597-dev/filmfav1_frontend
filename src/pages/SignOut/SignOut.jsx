@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { signOut } from '../services/users.js';
+import { signOut } from '../../services/users.js';
 
 function SignOut({ setUser }) {
 	const navigate = useNavigate();
