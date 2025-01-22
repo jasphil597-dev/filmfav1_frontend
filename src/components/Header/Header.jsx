@@ -1,22 +1,17 @@
 import React from 'react';
 import './Header.css';
+import Nav from '../Nav/Nav.jsx';
 
 const Header = () => {
 	return (
-		<header>
+		<header className='header'>
 			<div className='logo'>
-				<img src='/src/assets/Film Favorite (1).png' alt='Logo' height='200' />
+				<img src='/src/assets/Film Favorite (2).png' alt='Logo' height='130' />
 			</div>
 			<div className='search-bar'>
 				<input type='text' placeholder='Search...' />
 			</div>
-			<nav>
-				<a href='#'>Movies</a>
-				<a href='#'>My Movies</a>
-				<a href='#'>Watch List</a>
-				<a href='#'>Fav Movies</a>
-				<a href='#'>Log Out</a>
-			</nav>
+			<Nav />
 		</header>
 	);
 };

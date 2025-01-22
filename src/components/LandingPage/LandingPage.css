@@ -1,0 +1,108 @@
+.main-content {
+	padding: 20px;
+}
+
+h1 {
+	text-align: center;
+	margin-bottom: 20px;
+	font-size: 2.5em;
+	color: #333;
+}
+.scroll-container {
+	position: relative;
+	padding-bottom: 40px;
+}
+
+.movie-grid {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 20px;
+}
+
+.movie-scroll {
+	display: flex;
+	gap: 20px;
+	overflow-x: auto;
+	white-space: nowrap;
+	padding: 10px;
+	scroll-behavior: smooth;
+}
+
+.scroll-button {
+	position: absolute;
+	bottom: -50px;
+	background-color: #333;
+	color: white;
+	border: none;
+	padding: 10px 15px;
+	cursor: pointer;
+	font-size: 18px;
+	border-radius: 50%;
+	z-index: 1000;
+	opacity: 0.7;
+}
+
+.movie-scroll::-webkit-scrollbar {
+	display: none;
+}
+
+.movie-box {
+	flex: 0 0 auto;
+	width: 300px;
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	overflow: hidden;
+	text-align: center;
+	padding: 15px;
+	margin-top: 120px;
+	transition:
+		transform 0.3s ease,
+		box-shadow 0.3s ease;
+}
+
+.scroll-button.left {
+	left: 10px;
+}
+
+.scroll-button.right {
+	right: 10px;
+}
+
+.scroll-button:hover {
+	opacity: 1;
+	background-color: #555;
+}
+.movie-box:hover {
+	transform: scale(1.05);
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.movie-poster {
+	width: 100%;
+	border-radius: 10px 10px 0 0;
+}
+
+.movie-title {
+	font-size: 1.5em;
+	margin: 15px 0 10px;
+	color: #333;
+}
+
+.movie-description {
+	font-size: 1em;
+	color: #666;
+	margin-bottom: 10px;
+}
+@media (max-width: 768px) {
+	.movie-box {
+		width: 100%;
+	}
+}
+
+/* .movie-rating {
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #ff9500; 
+} */
